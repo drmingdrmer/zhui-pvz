@@ -1,0 +1,83 @@
+/* 太空防御战 - 游戏样式 */
+
+/* 游戏容器样式 */
+#game-container {
+    position: relative;
+    border: 2px solid #00ffff;
+    border-radius: 15px;
+    box-shadow:
+        0 0 20px #00ffff,
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    background: linear-gradient(135deg, #001122, #002244);
+    backdrop-filter: blur(10px);
+}
+
+/* 加载界面样式 */
+#loading {
+    background: rgba(0, 17, 34, 0.95);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+#loading h2 {
+    text-shadow: 0 0 10px #00ffff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #00ffff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00ffff, 0 0 30px #00ccff;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 1300px) {
+    #game-container {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 1000px) {
+    #game-container {
+        transform: scale(0.7);
+    }
+}
+
+/* 调试模式样式 */
+.debug-panel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    border: 1px solid #00ff00;
+    z-index: 1000;
+}
+
+/* 网格样式 */
+.grid-cell {
+    transition: all 0.2s ease;
+}
+
+.grid-cell:hover {
+    filter: brightness(1.2);
+}
+
+/* 按钮悬停效果 */
+.hover-effect {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hover-effect:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
