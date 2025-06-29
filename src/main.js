@@ -17,7 +17,7 @@ const config = {
             debug: false
         }
     },
-    scene: [MenuScene, GameScene, BootScene],
+    scene: [BootScene, MenuScene, GameScene],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
