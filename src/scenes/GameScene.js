@@ -54,29 +54,26 @@ export class GameScene extends Phaser.Scene {
             strokeThickness: 2
         }).setOrigin(0.5)
 
-        // 操作说明
-        this.add.text(50, height - 100, '操作说明:', {
-            fontSize: '18px',
-            fill: '#ffff00',
-            fontFamily: 'Arial'
-        })
+        // --- 创建左下角的物品选择栏 ---
+        const itemKeys = ['item_lightning', 'item_tnt', 'item_battery', 'item_pistol', 'item_nut']
+        const boxSize = 80
+        const startX = 50
+        const boxY = height - 50 - boxSize
+        const graphics = this.add.graphics()
 
-        this.add.text(50, height - 75, '• 鼠标悬停: 查看铁板放置区域', {
-            fontSize: '14px',
-            fill: '#cccccc',
-            fontFamily: 'Arial'
-        })
+        itemKeys.forEach((key, i) => {
+            const boxX = startX + i * boxSize
 
-        this.add.text(50, height - 55, '• 左键点击: 在铁板上放置防御塔', {
-            fontSize: '14px',
-            fill: '#cccccc',
-            fontFamily: 'Arial'
-        })
+            // 绘制背景板 (和铁板一样的风格)
+            graphics.fillStyle(0x00ffff, 1) // 蓝色边框
+            graphics.fillRect(boxX, boxY, boxSize, boxSize)
+            graphics.fillStyle(0x001133, 1) // 深蓝色背景
+            graphics.fillRect(boxX + 2, boxY + 2, boxSize - 4, boxSize - 4)
 
-        this.add.text(50, height - 35, '• ESC键: 返回主菜单', {
-            fontSize: '14px',
-            fill: '#cccccc',
-            fontFamily: 'Arial'
+            // 在背景板上放置物品图片
+            const itemImage = this.add.image(boxX + boxSize / 2, boxY + boxSize / 2, key)
+            // 缩放图片以适应方格
+            itemImage.setScale(Math.min((boxSize - 10) / itemImage.width, (boxSize - 10) / itemImage.height))
         })
 
         // 网格信息显示

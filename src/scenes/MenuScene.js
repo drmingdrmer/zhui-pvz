@@ -23,7 +23,7 @@ export class MenuScene extends Phaser.Scene {
         }).setOrigin(0.5)
 
         startButton.setInteractive()
-        startButton.on('pointerdown', () => this.scene.start('GameScene'))
+        startButton.on('pointerdown', () => this.scene.start('WorldMapScene'))
         startButton.on('pointerover', () => startButton.setTint(0x00ffff))
         startButton.on('pointerout', () => startButton.clearTint())
 
@@ -33,15 +33,15 @@ export class MenuScene extends Phaser.Scene {
         this.add.image(250, height - 250, 'carrier').setScale(1.2)
 
         // 航母上方的爆炸 (缩小一点)
-        this.add.image(250, height - 380, 'explosion').setScale(0.8)
+        this.add.image(250, height / 4, 'explosion').setScale(0.8)
 
         // 右上角核弹 (缩小并旋转)
-        this.add.image(width - 150, 120, 'nuke').setScale(0.8).setAngle(-45)
+        this.add.image(width - 150, 120, 'nuke').setScale(0.8).setAngle(-175)
 
         // 右下角太空飞船
         this.add.image(width - 180, height - 150, 'spaceship')
 
         // 飞船上方的太空人 (缩小一点)
-        this.add.image(width - 180, height - 250, 'astronaut').setScale(0.8)
+        this.add.image(width - 220, height / 2, 'astronaut').setScale(0.8)
     }
 } 

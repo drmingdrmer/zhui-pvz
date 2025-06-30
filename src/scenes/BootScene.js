@@ -24,6 +24,14 @@ export class BootScene extends Phaser.Scene {
         this.load.image('astronaut', `${imagePath}astronaut.png`)
         this.load.image('explosion', `${imagePath}explosion.png`)
 
+        // --- 加载游戏内物品图片 ---
+        const itemsPath = 'assets/images/items/'
+        this.load.image('item_lightning', `${itemsPath}lightning.png`)
+        this.load.image('item_tnt', `${itemsPath}tnt.png`)
+        this.load.image('item_battery', `${itemsPath}battery.png`)
+        this.load.image('item_pistol', `${itemsPath}pistol.png`)
+        this.load.image('item_nut', `${itemsPath}nut.png`)
+
         // 监听加载完成事件
         this.load.on('complete', () => {
             loadingText.setText('加载完成！')

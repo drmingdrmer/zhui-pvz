@@ -2,6 +2,7 @@ import Phaser from 'phaser'
 import { BootScene } from './scenes/BootScene.js'
 import { MenuScene } from './scenes/MenuScene.js'
 import { GameScene } from './scenes/GameScene.js'
+import { WorldMapScene } from './scenes/WorldMapScene.js'
 
 // 游戏配置
 const config = {
@@ -17,7 +18,7 @@ const config = {
             debug: false
         }
     },
-    scene: [BootScene, MenuScene, GameScene],
+    scene: [BootScene, MenuScene, WorldMapScene, GameScene],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
