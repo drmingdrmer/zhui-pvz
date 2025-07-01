@@ -3,12 +3,13 @@ import { BootScene } from './scenes/BootScene.js'
 import { MenuScene } from './scenes/MenuScene.js'
 import { GameScene } from './scenes/GameScene.js'
 import { WorldMapScene } from './scenes/WorldMapScene.js'
+import { MiniGameScene } from './scenes/MiniGameScene.js'
 
 // 游戏配置
 const config = {
     type: Phaser.AUTO,
-    width: 1200,
-    height: 800,
+    width: 1024,
+    height: 768,
     parent: 'game-container',
     backgroundColor: '#001122',
     physics: {
@@ -18,7 +19,13 @@ const config = {
             debug: false
         }
     },
-    scene: [BootScene, MenuScene, WorldMapScene, GameScene],
+    scene: [
+        BootScene,
+        MenuScene,
+        WorldMapScene,
+        GameScene,
+        MiniGameScene
+    ],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH
